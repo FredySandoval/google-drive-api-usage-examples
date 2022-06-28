@@ -14,6 +14,9 @@ Table of contents
       * [API key](#api-key)
       * [OAuth client ID](#oauth-client-id)
       * [Service account](#service-account)
+   * [Authenticating our Application](#authenticating-our-application)
+      * [Using API key](#using-api-key)
+      * [Using Google OAuth client ID](#using-google-oauth-client-id)
 <!--te-->
 
 What its used for
@@ -34,7 +37,7 @@ The first step is to decide the authentication method, here are the option and u
 
 * Service account
   ---------------
-  Use this credential to authenticate as a service account or to access files on behalf of Google Workspace. This service accounts are accessible only through the API.
+  Use this credential to authenticate as a service account or to access files on behalf of Google Workspace. This service accounts can't be accessed using a username or password.
   
 How to Get:
 =====
@@ -55,10 +58,11 @@ How to Get:
 
 Authenticating our Application
 ==============================
-## Using API key
+### Using API key
+```js
 https://github.com/FredySandoval/google-drive-api-usage-examples/blob/7b61859674203aa2827085a51452b0c50056470e/lib/authenticating-our-application/examples.js#L1-L14
-
-## Using Google OAuth client ID
+```
+### Using Google OAuth client ID
 https://github.com/FredySandoval/google-drive-api-usage-examples/blob/850286b06557f106b43036066e20384dd9174f83/lib/authenticating-our-application/examples.js#L17-L69
 
 
