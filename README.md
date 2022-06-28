@@ -36,7 +36,16 @@ The first step is to decide the authentication method, here are the option and u
   ---------------
   Use this credential to authenticate as a service account or to access files on behalf of Google Workspace. This service accounts are accessible only through the API.
   
- ### Examples: 
+ ### How to Get:
+ #### API key
+ Go to https://console.cloud.google.com/apis/credentials > Create Credentials > API Key
+ !Alert: This API key is normally exposed to the public, so you may want to restrict the API, because its usage will count towards your account.
+ 
+ #### OAuth client ID
+ Go to https://console.cloud.google.com/apis/credentials > Create Credentials > OAuth client ID
+ 
+ #### Service Accounts
+ Go to https://console.cloud.google.com/apis/credentials > Create Credentials > Service account
  ```Node
  const o =1;
  ```
