@@ -4,30 +4,42 @@ An easy to understand guide on how to use the Google Drive API
 ---
 
 The [Google Drive API Documentation][1] may not be the easiest API in the world, unfortunately is written in a way that is hard to read for the new user. In this repo I try to unveil the mystery and remove the complexity for this API.
-[1]: https://developers.google.com/drive/api/
 
 Table of contents
 =================
 
 <!--ts-->
    * [What its used for](#what-its-used-for)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
-      * [GitHub token](#github-token)
-      * [TOC generation with Github Actions](#toc-generation-with-github-actions)
-   * [Tests](#tests)
-   * [Dependency](#dependency)
-   * [Docker](#docker)
-     * [Local](#local)
-     * [Public](#public)
+   * [Authentication](#authentication)
+      * [API key](#api-key)
+      * [OAuth client ID](#oauth-client-id)
+      * [Service account](#service-account)
 <!--te-->
 
 What its used for
 =================
 In simple words: it help us to send HTTP requests in a way that the Google servers can accept, allowing us to manipulate the the Google Drive files.
 
+Authentication
+=====
+The first step is to decide the authentication method, here are the option and use cases:
+
+* API key
+  -------
+  Use this credential to access publicly-available data anonymously, this means files set as "[anyone with the link][2]".
+
+* OAuth client ID
+  ---------------
+  Use this credential to authenticate as an end user and access their data. Requires your app to request and receive consent from the user.
+
+* Service account
+  ---------------
+  Use this credential to authenticate as a service account or to access files on behalf of Google Workspace. This service accounts are accessible only through the API.
+  
+ ### Examples: 
+ ```Node
+ const o =1;
+ ```
+
+[1]: https://developers.google.com/drive/api/
+[2]: https://support.google.com/drive/answer/2494822?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cshare-a-file-publicly
