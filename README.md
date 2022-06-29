@@ -3,7 +3,7 @@ An easy to understand guide on how to use the Google Drive API
 
 ---
 
-The [Google Drive API Documentation][1] may not be the easiest API in the world, unfortunately is written in a way that is hard to read for the new user. In this repo I try to unveil the mystery and remove the complexity for this API.
+Usage Examples of the [Google Drive API Documentation][1]. 
 
 Table of contents
 =================
@@ -17,7 +17,27 @@ Table of contents
    * [Authenticating our Application](#authenticating-our-application)
       * [Using API key](#using-api-key)
       * [Using Google OAuth client ID](#using-google-oauth-client-id)
-      * [Service account](#using-service-account)
+      * [Using Service account](#using-service-account)
+  * [Sending a request](#sending-request)
+    * [Using the API key](#using-the-api-key) 
+    * [Using the OAuth client ID](#using-the-oauth-client-id)
+  * [File Methods, examples:](#file-methods-examples)
+    * [set root Url](#set-root-url)
+    * [copy](#copy)
+    * [create](#create)
+      * [create a new folder](#create-a-new-folder)
+      * [Upload a new file](#upload-a-new-file)
+    * [delete](#delete)
+    * [empty trash](#empty-trash)
+    * [export](#export)
+    * [generateIds](#generateids)
+    * [get](#get)
+    * [list](#list)
+    * [update](#update)
+    * [watch](#watch)
+    * [stop](#stop)
+
+
 <!--te-->
 
 What its used for
@@ -137,7 +157,7 @@ function main() {
 ```
 Sending a request
 =================
-Regardless of the method or programming language we use, the HTTP request that Google will receive looks like this:
+Regardless of the method or programming language we use, the HTTP request that Google will receive, looks like this:
 
 - ### Using the API key
 ```http
@@ -170,7 +190,7 @@ const path_parameters = {
 const result = await drive.files.get(path_parameters, options);
 ```
 
-Methods examples:
+File Methods, examples:
 =======
 ## set root Url
 for example you can send the request to a [ngrok https server tunneling ncat][4] to output all the incoming requests, for testing purposes.
@@ -198,7 +218,7 @@ const path_parameters = {
 const result = await drive.files.copy(path_parameters, options);
 ```
 ## create
-  - create a new folder
+  - ### create a new folder
 ```js
 const parents = ['YOUR_PARENT_FOLDER_OPTIONAL'];
 const name = 'YOUR_NEW_FOLDER_NAME';
@@ -212,7 +232,7 @@ const path_parameters = {
 }
 const result = await drive.files.create(path_parameters, options);
 ```
- - Upload a new file
+ - ### Upload a new file
 ```js
 const path_parameters = {
     resource: {
@@ -241,7 +261,7 @@ await drive.files.emptyTrash({});
 ```
 
 ## export
-For a list of avaiable mimeTypes available visit this link https://developers.google.com/drive/api/guides/ref-export-formats
+For a list of avaiable mimeTypes available visit this [link][6] 
 ```js
 const path_parameters = {
     fileId: 'YOUR_FILE_ID',
@@ -335,10 +355,4 @@ const result = await drive.channels.stop(path_parameters, options);
 [3]: https://github.com/googleapis/google-api-nodejs-client
 [4]: https://gist.github.com/FredySandoval/ff34e87f83e4c4dc4a771df44fc7e31c
 [5]: https://developers.google.com/drive/api/guides/search-files
-
-
-                                                          
-
-
-
-
+[6]: https://developers.google.com/drive/api/guides/ref-export-formats
