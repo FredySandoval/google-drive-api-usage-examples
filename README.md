@@ -225,7 +225,7 @@ const path_parameters = {
     fields: 'kind, id, name',
 }
 
-const result = await drive.files.create(path_parameters);
+const result = await drive.files.create(path_parameters, options);
 ```
 ## delete
 ```js
@@ -233,7 +233,7 @@ const path_parameters = {
     fileId: 'YOUR_FILE_ID',
     fields: 'kind, id, name',
 }
-const result = await drive.files.delete(path_parameters);
+const result = await drive.files.delete(path_parameters, options);
 ```
 ## empty trash
 ```js
@@ -262,7 +262,7 @@ const path_parameters = {
     count: 3, // the number of IDs you want
     fields: fields,
 }
-const result = await drive.files.generateIds(path_parameters);
+const result = await drive.files.generateIds(path_parameters, options);
 ```
 ## get
 ```js
@@ -284,12 +284,61 @@ const path_parameters = {
     fields: fields,
     pageToken: nextPageToken, // optional
 }
-const listFiles = await drive.files.list(path_parameters);
+const listFiles = await drive.files.list(path_parameters, options);
 ```
-
+## update
+```js
+const path_parameters = {
+    fileId: "YOUR_FILE_ID",
+    fields: 'kind, id, name',
+    resource: {
+        trashed: true, // This will send the file to trash
+        name: 'YOUR_NEW_FILE_NAME'
+    },
+}
+const result = await drive.files.update(path_parameters, options);
+```
+## watch
+This will send a HTTP request to the address every time the file is modified
+```js
+// use https://github.com/uuidjs/uuid to generate a unique id
+const channelId = "01234567-89ab-cdef-0123456789ab";
+const path_parameters = {
+    fileId: 'THE_ID_OF_THE_FILE_YOU_WANT_TO_WATCH',
+    supportsAllDrives: true,
+    supportsTeamDrives: true,
+    requestBody: {
+        id: channelId,
+        type: "web_hook",
+        address: "https://example.com/webhook",
+        payload: true,
+    },
+}
+const result = await drive.files.watch(path_parameters, options);
+```
+## stop
+This will stop or unwatches the  provious watch file
+```js 
+const channelId = "01234567-89ab-cdef-0123456789ab";
+const path_parameters = {
+    requestBody: {
+        id: channelId,
+        // The watch function returns this value
+        resourceId: 'abcdeF-GHIJKLMNOPQRSTUVW',
+    },
+}
+const result = await drive.channels.stop(path_parameters, options);
+```
 
 [1]: https://developers.google.com/drive/api/
 [2]: https://support.google.com/drive/answer/2494822?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cshare-a-file-publicly
 [3]: https://github.com/googleapis/google-api-nodejs-client
 [4]: https://gist.github.com/FredySandoval/ff34e87f83e4c4dc4a771df44fc7e31c
 [5]: https://developers.google.com/drive/api/guides/search-files
+
+
+                                                          
+
+
+
+
