@@ -58,7 +58,17 @@ Authenticating our Application
 ==============================
 ### Using API key
 
-https://github.com/FredySandoval/google-drive-api-usage-examples/blob/7b61859674203aa2827085a51452b0c50056470e/lib/authenticating-our-application/examples.js#L1-L14
+<!-- https://github.com/FredySandoval/google-drive-api-usage-examples/blob/7b61859674203aa2827085a51452b0c50056470e/lib/authenticating-our-application/examples.js#L1-L14 -->
+```js 
+const { google } = require('googleapis');
+
+const API_KEY = 'RanD0mK3Y-abcdevwefw-1234567890';
+
+async function main() {
+    const drive = google.drive({ version: 'v3', auth: API_KEY });
+    console.log(drive);
+}
+```
 
 ### Using Google OAuth client ID
 https://github.com/FredySandoval/google-drive-api-usage-examples/blob/850286b06557f106b43036066e20384dd9174f83/lib/authenticating-our-application/examples.js#L17-L69
