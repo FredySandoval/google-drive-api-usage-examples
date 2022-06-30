@@ -1,0 +1,7 @@
+POST http://localhost:5000/files/create
+Content-Type: application/json
+
+{
+   "folderName" : "Takeout99",
+   "parents": ""
+}

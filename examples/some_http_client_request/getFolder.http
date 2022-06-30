@@ -1,0 +1,7 @@
+@rootUrl = https://www.googleapis.com
+GET {{rootUrl}}/drive/v3/files
+    ?q=mimeType='application/vnd.google-apps.folder' and name = 'Takeout'
+    &pageSize=10
+    &fields=kind, nextPageToken ,files(id, name, mimeType, trashed, thumbnailLink, hasThumbnail, webContentLink, webViewLink, iconLink, parents, thumbnailVersion, owners) HTTP/1.1
+Authorization: Bearer {{$dotenv TOKEN}}
+Content-Type: application/json

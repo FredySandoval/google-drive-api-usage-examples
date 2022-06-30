@@ -1,0 +1,9 @@
+@scope = https://www.googleapis.com/auth/drive
+@redirect_uri = http://localhost
+GET https://accounts.google.com/o/oauth2/v2/auth
+    ?access_type=offline
+    &scope={{scope}}
+    &client_id= {{$dotenv CLIENT_ID}}
+    &redirect_uri={{redirect_uri}}
+    &response_type=code HTTP/1.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.50 Safari/537.36

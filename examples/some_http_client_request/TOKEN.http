@@ -1,0 +1,10 @@
+@SCOPE = https://www.googleapis.com/auth/drive 
+POST https://oauth2.googleapis.com/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+code={{$dotenv CODE}}
+&scope={{SCOPE}}
+&client_id={{$dotenv CLIENT_ID}}
+&client_secret={{$dotenv CLIENT_SECRET}}
+&redirect_uri=http://localhost
+&grant_type=authorization_code

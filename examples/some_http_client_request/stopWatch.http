@@ -1,0 +1,9 @@
+POST https://www.googleapis.com/drive/v3/channels/stop
+  
+Authorization: Bearer {auth_token_for_current_user}
+Content-Type: application/json
+
+{
+  "id": "wjfowjo-cjwocjw-jcowjow-cjowcjwo-cjwojwj",
+  "resourceId": "fwojfwojfo"
+}

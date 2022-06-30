@@ -1,0 +1,6 @@
+@fileid = fwefwefwefwew
+POST http://localhost:5000/files/{{fileid}}/copy
+    ?fields=kind, id, name HTTP/1.1
+Content-Type: application/json
+
+{"name":"copiedfile","parents":["1ezkMY35VvTbV_2LW8eivGuVkwXWQdKmK"]}

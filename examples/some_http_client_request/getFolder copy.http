@@ -1,0 +1,10 @@
+@rootUrl = https://www.googleapis.com
+@key = fwjeofjw-cowjeojwoj
+@folderid = wifjwifjwo
+GET {{rootUrl}}/drive/v3/files
+    ?q='{{folderid}}' in parents
+    &pageSize=10
+    &fields=kind, nextPageToken ,files(id, name, mimeType, trashed, thumbnailLink, hasThumbnail, webContentLink, webViewLink, iconLink, parents, thumbnailVersion, owners)
+    &key={{key}} HTTP/1.1
+# Authorization: Bearer {{$dotenv TOKEN}}
+Content-Type: application/json

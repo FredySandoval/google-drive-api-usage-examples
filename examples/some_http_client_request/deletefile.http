@@ -1,0 +1,2 @@
+@fileid=fwefjwoefwoefowe
+DELETE http://localhost:5000/files/{{fileid}}

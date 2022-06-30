@@ -1,0 +1,5 @@
+@rootUrl = http://localhost:5000
+@fileId = fjweofjwoejfowej 
+GET {{rootUrl}}/files/{{fileId}}/export
+    ?mimeType=application%2Fpdf&fields=kind,id,name HTTP/1.1
+Authorization: Bearer {{$dotenv TOKEN}} 

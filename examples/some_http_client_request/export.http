@@ -1,0 +1,8 @@
+@rootUrl = https://www.googleapis.com
+@fileId = fwefjw-fjwoefjwo-wofjwofjw
+@key = fwefwojfo-jowejfow
+GET {{rootUrl}}/drive/v3/files/{{fileId}}/export
+    ?mimeType=text/plain
+    &key={{key}} HTTP/1.1
+
+# Authorization: Bearer {{$dotenv TOKEN}} 
