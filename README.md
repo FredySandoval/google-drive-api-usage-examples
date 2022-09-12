@@ -1,6 +1,14 @@
 # google-drive-api-usage-examples
 An easy to understand guide on how to use the Google Drive API
 
+Canonical Pages:
+<br>
+[dev.to/fredysandoval/the-google-drive-api-for-the-very-very-beginner-4ii9](https://dev.to/fredysandoval/the-google-drive-api-for-the-very-very-beginner-4ii9)
+<br>
+
+[fredysandoval.hashnode.dev/the-google-drive-api-for-the-very-very-beginner](https://fredysandoval.hashnode.dev/the-google-drive-api-for-the-very-very-beginner)
+
+
 ---
 
 Usage Examples of the [Google Drive API Documentation][1]. 
