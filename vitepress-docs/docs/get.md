@@ -1,4 +1,8 @@
-# get
+---
+title: Get
+---
+# {{ $frontmatter.title }}
+
 ```js
 const path_parameters = {
     fileId: 'YOUR_FILE_ID',

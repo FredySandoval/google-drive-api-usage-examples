@@ -1,3 +1,6 @@
+---
+title: Sending a request
+---
 # Sending a request
 Regardless of the method or programming language we use, the HTTP request that Google will receive, looks like this:
 

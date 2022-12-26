@@ -1,4 +1,8 @@
-# generateIds
+---
+title: Generate Ids
+---
+# {{ $frontmatter.title }}
+
 ```js
 const fields = 'kind, space, ids';
 const path_parameters = {

@@ -1,4 +1,7 @@
-# Authenticating our Application
+---
+title: Authenticating our Application
+---
+# {{ $frontmatter.title }}
 
 ## Using API key
 

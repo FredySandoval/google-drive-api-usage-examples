@@ -1,4 +1,8 @@
-# create
+---
+title: create
+---
+# {{ $frontmatter.title }}
+
 to create a new folder
 ```js
 const parents = ['YOUR_PARENT_FOLDER_OPTIONAL'];

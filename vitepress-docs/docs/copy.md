@@ -1,4 +1,7 @@
-# File Methods, examples:
+---
+title: 'File Methods, example:'
+---
+# {{ $frontmatter.title }}
 
 ## set root Url
 ::: tip

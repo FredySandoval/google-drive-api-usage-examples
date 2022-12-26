@@ -1,4 +1,8 @@
-# export
+---
+title: Export
+---
+# {{ $frontmatter.title }}
+
 For a list of avaiable mimeTypes available visit this [link][6] 
 ```js
 const path_parameters = {

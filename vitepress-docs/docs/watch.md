@@ -1,3 +1,6 @@
+---
+title: Watch
+---
 # watch
 This will send a HTTP request to the address every time the file is modified
 ```js

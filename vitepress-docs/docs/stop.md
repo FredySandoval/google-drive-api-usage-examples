@@ -1,3 +1,6 @@
+---
+title: Stop
+---
 # stop
 This will stop or unwatches the  provious watch file
 ```js 

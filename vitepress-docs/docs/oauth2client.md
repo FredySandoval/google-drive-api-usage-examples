@@ -1,3 +1,6 @@
+---
+title: This is the OAuth2Client but in a simplified version
+---
 # This is the OAuth2Client but in a simplified version. 
 
 Original version can be found in [github.com/googleapis/google-auth-library-nodejs/oauth2client.ts](https://github.com/googleapis/google-auth-library-nodejs/blob/main/src/auth/oauth2client.ts)

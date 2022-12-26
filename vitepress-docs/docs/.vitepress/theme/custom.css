@@ -27,3 +27,8 @@
 
   --vp-font-family-mono: "Space Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 } 
+
+.search-text:not(html.dark) {
+  background: rgb(161 161 161 / 15%);
+  border: 1px solid rgb(116 116 116 / 20%);
+}
