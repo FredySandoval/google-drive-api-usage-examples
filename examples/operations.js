@@ -85,16 +85,18 @@ async function uploadFile(drive, pathfile, name = 'default', folderId = []) {
             && typeof stream._read === 'function'
             && typeof stream._readableState === 'object';
     }
-    if (!isReadableStream(pathfile)) throw new Error('File is not readable');
-    const body = typeof pathfile === 'string' ?
-        fs.createReadStream(pathfile) : pathfile;
+    if (!isReadableStream(pathfile) && typeof pathfile !== 'string') {
+        throw new Error('File is not readable');
+    }
+    // if (!isReadableStream(pathfile)) throw new Error('File is not readable');
+    // const body = typeof pathfile === 'string' ? fs.createReadStream(pathfile) : pathfile;
     const path_parameters = {
         resource: {
             'name': name,
             parents: folderId,
         },
         media: {
-            body: body,
+            body: typeof pathfile === 'string' ? fs.createReadStream(pathfile) : pathfile, // should be a readable stream in any case
         },
         fields: resource_representation,
     }
